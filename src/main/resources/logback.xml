@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--「Spring Boot」が予め用意している基本的な設定をインクルード。-->
+    <!--これによってデフォルトからの差分のみ設定できる-->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!--「Log4JDBC」はいろいろなログを出力するが、ここではSQLのログだけ出力したいため、それ以外は出力しないように「OFF」を設定-->
+    <logger name="jdbc" level="OFF"/>
+    <!--SQLログは「デバッグ・レベル」で出力されるため、「DEBUG」を設定。-->
+    <!--「jdbc.sqltiming」のログは、「SQL分+実行時間」をログに出力。-->
+    <logger name="jdbc.sqltiming" level="DEBUG"/>
+</configuration>
